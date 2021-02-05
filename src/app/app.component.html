@@ -1,17 +1,14 @@
-
 <div class="container main-container">
-    <h1>Firechat</h1>
+    <h1 class="display-3 text-white">Firechat</h1>
 
-    <div *ngIf="cs.usuario.uid"
-    (click)="cs.logout()"
-    class="col-md-12 text-right">
+    <div *ngIf="cs.usuario.uid" (click)="cs.logout()" class="col-md-12 text-right">
         <button class="btn btn-outline-danger">Salir</button>
     </div>
 
 
 
     <app-login *ngIf="!cs.usuario.uid"></app-login>
-     <div *ngIf="cs.usuario.uid">
+    <div *ngIf="cs.usuario.uid">
 
         <app-chat></app-chat>
     </div>
