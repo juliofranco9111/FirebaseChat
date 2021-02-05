@@ -1,4 +1,4 @@
-# Firechat
+# Firechat - Chat app made with Angular Jsand Firebase authentication, please Open 2 instance of Localhost and signIn in both
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
 
