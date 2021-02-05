@@ -1,0 +1,86 @@
+<!-- <h1>Chat</h1>
+<hr>
+
+<div class="app-mensajes" id="app-mensajes">
+
+    <div *ngFor="let chat of cs.chats"
+        [ngClass]="{'text-right': cs.usuario.uid == chat.uid}"    
+    >
+        <span [ngClass]="{'badge-primary': cs.usuario.uid == chat.uid,
+                            'badge-success': cs.usuario.uid != chat.uid }" 
+        class="badge ">{{ chat.nombre }}</span>
+        
+        <p>
+            {{chat.mensaje}}
+        </p>
+    </div>
+ 
+</div>
+
+<input class="form-control" 
+    type="text" name="mensaje" 
+    (keyup.enter)="enviarMensaje()"
+    [(ngModel)]="mensaje" placeholder="Enviar mensaje"> -->
+
+
+
+<div class="container-fluid h-100 mt-3">
+  <div class="row justify-content-center h-100">
+
+    <div class="col-md-8 col-xl-6 chat">
+      <div class="card">
+        <div class="card-header msg_head">
+          <div class="d-flex bd-highlight">
+            <div class="img_cont">
+              <img src="{{cs.usuario.img}}" class="rounded-circle user_img">
+              <span class="online_icon"></span>
+            </div>
+            <div class="user_info">
+              <h3 class="text-white">{{cs.usuario.nombre}}</h3>
+              <small class="text-white">Online</small>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card-body msg_card_body" id="app-mensajes" class="app-mensajes">
+          <div *ngFor="let chat of cs.chats">
+            <div [ngClass]="{'justify-content-end': cs.usuario.uid == chat.uid,
+            'justify-content-start': cs.usuario.uid != chat.uid}"
+            class="d-flex mb-4">
+
+              
+            
+              <div [ngClass]="{'msg_cotainer_send': cs.usuario.uid == chat.uid,
+              'msg_cotainer': cs.usuario.uid != chat.uid}"
+              class="msg_cotainer">
+              
+                  <span [ngClass]="{'msg_time_send': cs.usuario.uid == chat.uid,
+                  'msg_time': cs.usuario.uid != chat.uid}"
+                  >{{chat.fecha | date :'short'}}</span>
+                  {{chat.mensaje}}
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="d-flex justify-content-end">
+            <div class="msg_cotainer_send">
+                Hi Khalid i am good tnx how about you?
+                <span class="msg_time_send">8:55 AM, Today</span>
+            </div>
+           
+        </div> -->
+
+        <div class="card-footer">
+          <div class="input-group">
+            <input class="form-control type_msg" type="text" name="mensaje" 
+            (keyup.enter)="enviarMensaje()"
+            [(ngModel)]="mensaje" placeholder="Enviar mensaje">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
